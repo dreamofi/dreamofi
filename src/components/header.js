@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery, Link } from "gatsby";
 import React, { useState } from "react";
+import SectionHeader from "./sectionHeader/SectionHeader.component";
 
 function Header() {
   const [isExpanded, toggleExpansion] = useState(false);
@@ -32,6 +33,8 @@ function Header() {
             </span>
           </h1>
         </Link>
+
+        <SectionHeader label="Website for Akari" />
 
         <button
           className="items-center block px-3 py-2 text-white border border-white rounded md:hidden"

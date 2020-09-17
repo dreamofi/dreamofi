@@ -25,16 +25,25 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-postcss`,
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
-        postCssPlugins: [
-          require(`tailwindcss`)(tailwindConfig),
-          require(`autoprefixer`),
-          ...(process.env.NODE_ENV === `production`
-            ? [require(`cssnano`)]
-            : []),
+        fonts: [
+          {
+            family: `Montserrat`,
+            variants: [`400`, `700`, `900`],
+          },
         ],
       },
+    },
+    {
+      resolve: `gatsby-plugin-emotion`,
+      options: {
+        // Accepts all options defined by `babel-plugin-emotion` plugin.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {},
     },
     `gatsby-plugin-offline`,
   ],
