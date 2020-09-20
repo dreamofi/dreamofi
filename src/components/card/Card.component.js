@@ -3,50 +3,53 @@ import PropTypes from "prop-types";
 import tw, { styled } from "twin.macro";
 import Button from "../buttons/Button.component";
 
+import ImageLoader from "../imageLoader/ImageLoader";
+
 const CardContainer = styled.div`
-  ${tw`hover:shadow md:w-4/12 flex flex-col max-h-screen`}
+  ${tw`flex flex-col flex-auto w-full my-2 border-2 md:m-2 lg:m-4 hover:shadow-md md:w-3/12 font-display border-nearblack`}
 `;
 
 const CardImageContainer = styled.div`
-  ${tw`bg-lightblue p-2 md:p-4 h-40 md:h-48`}
+  ${tw`w-full h-48 bg-lightblue`}
 `;
 
-const CardImage = styled.div`
-  background: ${({ imgUrl }) => `url(${imgUrl}) center center no-repeat`};
-  ${tw`h-full w-full`};
-  background-size: cover;
+const CardImage = styled(ImageLoader)`
+  ${tw`h-16`};
 `;
 
 const CardContentContainer = styled.div`
-  ${tw`bg-golden p-2 md:p-4 space-y-2`}
+  ${tw`flex flex-col flex-auto p-2 bg-golden md:p-4`}
 `;
 
 const CardTitle = styled.div`
-  ${tw`text-base md:text-xl font-bold`}
+  ${tw`text-lg font-bold md:text-2xl`}
 `;
 
 const CardText = styled.div`
-  ${tw`text-xs md:text-sm overflow-y-auto h-64 space-y-1 leading-5 md:leading-6`}
+  ${tw`overflow-y-auto text-base space-y-1 leading-5 md:leading-6`}
 `;
 
+const ButtonContainer = styled.a`
+  ${tw`w-full hover:bg-darkgrey`}
+`;
 const DetailButton = styled(Button)`
-  ${tw`w-full hover:bg-darkblue`}
+  ${tw`w-full hover:bg-darkgrey`}
 `;
 
-const Card = ({ title, content, imgUrl }) => {
+const Card = ({ title, content, imgUrl, pageUrl }) => {
   return (
-    <div>
-      <CardContainer>
-        <CardImageContainer>
-          <CardImage imgUrl={imgUrl} />
-        </CardImageContainer>
-        <CardContentContainer>
-          <CardTitle>{title}</CardTitle>
-          <CardText>{content}</CardText>
-        </CardContentContainer>
-        <DetailButton label="MORE DETAILS" buttonStyles="CARD" />
-      </CardContainer>
-    </div>
+    <CardContainer>
+      <CardImageContainer>
+        <CardImage imgUrl={imgUrl} alt={title} />
+      </CardImageContainer>
+      <CardContentContainer>
+        <CardTitle>{title}</CardTitle>
+        <CardText>{content}</CardText>
+      </CardContentContainer>
+      <ButtonContainer href={pageUrl} target="_blank">
+        <DetailButton label="GO TO PAGE" buttonStyles="CARD" />
+      </ButtonContainer>
+    </CardContainer>
   );
 };
 
@@ -56,4 +59,5 @@ Card.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
   imgUrl: PropTypes.string.isRequired,
+  pageUrl: PropTypes.string,
 };

@@ -13,10 +13,11 @@ global.___loader = {
   enqueue: () => {},
   hovering: () => {},
 };
-// This global variable is prevents the "__BASE_PATH__ is not defined" error inside Storybook.
-// global.__BASE_PATH__ = "/";
 
-global.__PATH_PREFIX__ = "";
+//This global variable is prevents the "__BASE_PATH__ is not defined" error inside Storybook.
+global.__BASE_PATH__ = "/";
+
+// global.__PATH_PREFIX__ = "";
 window.___navigate = (pathname) => {
   action("NavigateTo:")(pathname);
 };

@@ -2,22 +2,24 @@ import React from "react";
 import PropTypes from "prop-types";
 import tw, { styled } from "twin.macro";
 
+import { AnchorLink } from "gatsby-plugin-anchor-links";
+
 const NavbarButton = styled.li`
   ${tw`text-xl`}
 `;
 
 const NavbarContainer = styled.ul`
-  ${tw`flex flex-wrap font-display space-x-4 space-y-0`}
+  ${tw`flex flex-wrap items-center justify-center p-0 font-display space-x-4 space-y-0`}
   ${({ isAlone }) =>
-    isAlone && tw`flex-col space-x-0 space-y-3`}
+    isAlone && tw`flex-col space-x-0 space-y-8`}
   ${NavbarButton} {
-    ${tw`mb-0 `}
+    ${tw`mb-0 text-center`}
     & > a {
-      ${tw`no-underline font-bold hover:text-lightblue`}
+      ${tw`font-bold no-underline hover:text-lightblue`}
       ${({ isAlone }) =>
         isAlone
-          ? tw`text-nearblack text-5xl py-2 hover:border-b-8 hover:border-lightblue`
-          : tw`text-lightgrey py-3 hover:border-b-8 hover:border-lightblue`}
+          ? tw`py-2 text-4xl text-nearblack hover:border-b-4 hover:border-lightblue`
+          : tw`py-1 text-lightgrey md:py-2 hover:border-b-2 md:hover:border-b-4 hover:border-lightblue`}
     }
   }
 `;
@@ -28,16 +30,16 @@ const Navbar = ({ isAlone }) => {
   return (
     <NavbarContainer isAlone={isAlone}>
       <NavbarButton>
-        <a href="#Home">HOME</a>
+        <AnchorLink to="/#Home">HOME</AnchorLink>
       </NavbarButton>
       <NavbarButton>
-        <a href="#About">ABOUT</a>
+        <AnchorLink to="/#About">ABOUT</AnchorLink>
       </NavbarButton>
       <NavbarButton>
-        <a href="#Works">WORKS</a>
+        <AnchorLink to="/#Works">WORKS</AnchorLink>
       </NavbarButton>
       <NavbarButton>
-        <a href="#Contact">CONTACT</a>
+        <AnchorLink to="/#Contact">CONTACT</AnchorLink>
       </NavbarButton>
     </NavbarContainer>
   );

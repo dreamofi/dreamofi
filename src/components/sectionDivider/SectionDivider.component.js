@@ -15,17 +15,17 @@ const SectionDivider = ({ topColor, bottomColor, isTop, isFooter }) => {
       isTop={isTop}
       isFooter={isFooter}
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1920 82"
+      viewBox="0 0 1900 100"
     >
       {!isFooter ? (
         <>
           <polygon
             className={`fill-current text-${topColor} `}
-            points="0,0 0,62 1920,20 1920,0"
+            points="0,-2 0,100 1900,0 1900,-2"
           />
           <polygon
             className={`fill-current text-${bottomColor} `}
-            points="0,62 0,82 1920,82 1920,20"
+            points="0,100 0,102 1900,102 1920,0"
           />
         </>
       ) : (
@@ -36,7 +36,7 @@ const SectionDivider = ({ topColor, bottomColor, isTop, isFooter }) => {
           />
           <polygon
             className={`fill-current text-${bottomColor} `}
-            points="0,82 1920,82 960,22"
+            points="0,102 1900,102 950,30"
           />
         </>
       )}

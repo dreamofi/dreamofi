@@ -21,57 +21,6 @@ set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
 1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-wincmd =
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 34 - ((26 * winheight(0) + 23) / 47)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-34
-normal! 012|
-wincmd w
-argglobal
-if bufexists("tailwind.config.js") | buffer tailwind.config.js | else | edit tailwind.config.js | endif
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 22 - ((21 * winheight(0) + 23) / 47)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-22
-normal! 022|
-wincmd w
-wincmd =
-tabnext
-edit /media/sdd2/myPortfolio/myportfolio/src/components/buttons/Button.stories.js
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
 wincmd _ | wincmd |
 split
 1wincmd k
@@ -95,15 +44,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 11) / 23)
+let s:l = 18 - ((11 * winheight(0) + 12) / 24)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+18
+normal! 05|
 wincmd w
 argglobal
-if bufexists("src/components/contact/Contact.stories.js") | buffer src/components/contact/Contact.stories.js | else | edit src/components/contact/Contact.stories.js | endif
+if bufexists(".storybook/webpack.config.js") | buffer .storybook/webpack.config.js | else | edit .storybook/webpack.config.js | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -113,15 +62,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 11 - ((10 * winheight(0) + 11) / 22)
+let s:l = 2 - ((0 * winheight(0) + 11) / 23)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-11
-normal! 038|
+2
+normal! 0
 wincmd w
 argglobal
-if bufexists("src/components/contact/Contact.component.js") | buffer src/components/contact/Contact.component.js | else | edit src/components/contact/Contact.component.js | endif
+if bufexists("tailwind.config.js") | buffer tailwind.config.js | else | edit tailwind.config.js | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -131,20 +80,49 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 25 - ((21 * winheight(0) + 23) / 46)
+let s:l = 27 - ((26 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-25
-normal! 0
+27
+normal! 020|
 wincmd w
 wincmd =
 tabnext
-edit src/components/navbar/Navbar.stories.js
+edit src/components/otherWorks/OtherWorks.component.js
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 63 - ((34 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+63
+normal! 014|
+tabnext
+edit src/templates/layout/Layout.component.js
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
-1wincmd h
+wincmd _ | wincmd |
+vsplit
+2wincmd h
+wincmd w
 wincmd w
 set nosplitbelow
 set nosplitright
@@ -164,15 +142,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 12 - ((11 * winheight(0) + 23) / 46)
+let s:l = 18 - ((17 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-12
-normal! 02|
+18
+normal! 015|
 wincmd w
 argglobal
-if bufexists("src/components/navbar/Navbar.component.js") | buffer src/components/navbar/Navbar.component.js | else | edit src/components/navbar/Navbar.component.js | endif
+if bufexists("src/pages/index.js") | buffer src/pages/index.js | else | edit src/pages/index.js | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -182,49 +160,90 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 20 - ((19 * winheight(0) + 23) / 46)
+let s:l = 11 - ((10 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-20
-normal! 011|
+11
+normal! 034|
 wincmd w
-2wincmd w
+argglobal
+if bufexists("src/components/goTop/GoTop.component.js") | buffer src/components/goTop/GoTop.component.js | else | edit src/components/goTop/GoTop.component.js | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 22 - ((21 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+22
+normal! 04|
+wincmd w
+3wincmd w
 wincmd =
 tabnext 3
 set stal=1
-badd +1 tailwind.config.js
+badd +2 .storybook/webpack.config.js
 badd +8 postcss.config.js
+badd +40 src/components/hero/Hero.component.js
+badd +22 tailwind.config.js
+badd +10 src/templates/latestWork/LatestWork.component.js
+badd +77 gatsby-config.js
+badd +25 src/content/latest-works/akariapp.mdx
+badd +19 src/components/latestWorkSubsection/LatestWorkSubsection.component.js
+badd +48 src/components/imageLoader/ImageLoader.js
+badd +27 src/content/latest-works/akariweb.mdx
+badd +6 src/components/buttons/Button.component.js
+badd +10 src/pages/menu.js
+badd +41 src/components/header/Header.component.js
+badd +9 src/components/footer/Footer.stories.js
+badd +6 src/components/navbar/Navbar.stories.js
+badd +9 src/components/menuPanel/MenuPanel.stories.js
+badd +24 src/components/menuPanel/MenuPanel.component.js
+badd +6 src/components/footer/Footer.component.js
+badd +42 src/components/navbar/Navbar.component.js
+badd +2 src/components/buttons/Button.stories.js
+badd +11 src/components/contact/Contact.stories.js
+badd +41 src/components/contact/Contact.component.js
 badd +6 src/components/sectionDivider/SectionDivider.stories.js
-badd +35 src/components/latestWorkSubsection/LatestWorkSubsection.stories.js
-badd +5 src/components/sectionDivider/SectionDivider.component.js
-badd +21 src/components/latestWorkSubsection/LatestWorkSubsection.component.js
-badd +22 /media/sdd2/myPortfolio/myportfolio/src/components/buttons/Button.stories.js
-badd +1 src/components/buttons/Button.component.js
-badd +14 src/components/card/Card.component.js
-badd +1 src/components/workSectionHeader/WorkSectionHeader.component.js
+badd +34 src/components/latestWorkSubsection/LatestWorkSubsection.stories.js
+badd +53 src/components/sectionDivider/SectionDivider.component.js
+badd +9 src/components/card/Card.component.js
+badd +12 src/components/workSectionHeader/WorkSectionHeader.component.js
 badd +4 babel-plugin-macros.config.js
-badd +6 .storybook/webpack.config.js
 badd +1 gatsby-browser.js
-badd +10 .storybook/main.js
+badd +2 .storybook/main.js
 badd +34 src/components/header.js
-badd +20 gatsby-config.js
 badd +5 src/utils/global.css
-badd +3 .storybook/preview.js
+badd +19 .storybook/preview.js
 badd +1 src/components/buttons/MyResumeButton/MyResumeButton.js
-badd +1 src/pages/index.js
+badd +10 src/pages/index.js
 badd +2 .storybook/preview-head.html
-badd +12 src/components/sectionHeader/SectionHeader.component.js
+badd +15 src/components/sectionHeader/SectionHeader.component.js
 badd +14 src/components/sectionHeader/SectionHeader.stories.js
-badd +12 src/components/hero/Hero.component.js
 badd +12 src/components/workSectionHeader/WorkSectionHeader.stories.js
-badd +27 src/components/card/Card.stories.js
-badd +1 /media/sdd2/myPortfolio/myportfolio/src/components/latestWorkSubsection//Section.component.js
+badd +7 src/components/card/Card.stories.js
+badd +1 src/components/latestWorkSubsection/Section.component.js
 badd +11 src/components/hero/Hero.stories.js
-badd +31 src/components/contact/Contact.component.js
-badd +3 src/components/contact/Contact.stories.js
-badd +17 src/components/navbar/Navbar.component.js
-badd +0 src/components/navbar/Navbar.stories.js
+badd +1 src/components/header/Header.stories.js
+badd +12 src/pages/menu-panel.js
+badd +1 src/components/layout.js
+badd +8 src/templates/layout/Layout.component.js
+badd +6 src/components/about/About.component.js
+badd +33 src/components/about/About.stories.js
+badd +1 ~/.vim/coc-settings.json
+badd +12 src/pages/akariweb.mdx
+badd +1 src/components/latestWork/LatestWork.component.js
+badd +26 src/content/latest-works/ecommerce.mdx
+badd +74 src/components/otherWorks/OtherWorks.component.js
+badd +18 src/components/goTop/GoTop.component.js
+badd +15 src/components/bottomHamburger/BottomHamburger.component.js
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif

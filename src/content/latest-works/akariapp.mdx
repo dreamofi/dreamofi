@@ -1,0 +1,31 @@
+---
+title: Web app for Akari Center
+path: /latest-works/akariapp
+date: 2020-09-20
+description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+img: 3-devices-white.png
+url: https://cwd-exam.now.sh
+---
+
+import LatestWorkLayout from "../../templates/latestWork/LatestWork.component.js";
+
+<h1 class="font-bold">Et iaculatur lapis</h1>
+<p>{props.pageContext.frontmatter.description}</p>
+
+- Testing first list
+  - The first line
+  - The second line
+  - Add more yeahhhhhhhh
+
+1. Testing second list
+1. The first line
+1. The second line
+1. Add more yeahhhhhhhh
+
+export default function Layout({ children, ...props }) {
+  return (
+    <LatestWorkLayout imgUrl={props.pageContext.frontmatter.img} alt="Akari app image" headerLabel={props.pageContext.frontmatter.title} linkTo={props.pageContext.frontmatter.url}>
+      {children}
+    </LatestWorkLayout>
+  )
+}

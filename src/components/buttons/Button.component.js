@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import tw, { styled } from "twin.macro";
 
 const StyledButtonComponent = styled.button`
-  ${tw`bg-pink text-lightgrey hover:bg-golden  text-center font-bold py-2 px-4 text-sm md:text-lg`}
+  ${tw`bg-pink text-lightgrey hover:bg-golden  text-center font-bold font-display py-2 px-4 text-lg`}
 
   ${({ buttonStyles }) => {
     switch (buttonStyles) {
