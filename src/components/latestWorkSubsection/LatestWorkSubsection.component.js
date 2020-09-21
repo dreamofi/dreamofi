@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import SuperLink from "gatsby-plugin-superlink";
 
-import tw, { styled } from "twin.macro";
+import tw, { styled, css } from "twin.macro";
 
 import SectionHeader from "../sectionHeader/SectionHeader.component";
 import Button from "../buttons/Button.component";
@@ -12,27 +12,62 @@ const SubSectionContainer = styled.section`
   ${tw`flex flex-wrap items-center justify-center w-full px-4 py-10 md:px-10 md:px-12 md:py-24 font-display`}
 `;
 
-const SubSectionLayout = styled.div`
-  ${tw`flex flex-wrap flex-1 md:flex-no-wrap space-y-3 md:space-x-5 md:justify-around md:max-w-screen-lg`}
-  ${({ reverse }) => reverse && tw`md:flex-row-reverse`}
-  ${({ layoutStyle }) =>
-    layoutStyle === "column" && tw`flex-col w-full max-w-full`}
-`;
-
 const TitleAndImageContainer = styled.div`
-  ${tw`flex flex-col w-full space-y-3 sm:space-y-6 md:justify-start`}
-  ${({ layoutStyle }) =>
-    layoutStyle === "column" ? tw`md:w-full md:max-w-full` : tw`md:w-5/12`}
+  ${tw`relative flex flex-col flex-auto w-full space-y-3 sm:space-y-6 md:justify-center`}
 `;
 
 const ImageHolder = styled(ImageLoader)`
-  ${tw`object-contain w-full ml-auto`};
+  ${tw`w-full m-auto`};
 `;
 
 const TextAndButtonContainer = styled.div`
   ${tw`flex flex-col flex-wrap items-start justify-center w-full space-y-4`}
-  ${({ layoutStyle }) =>
-    layoutStyle === "column" ? tw`md:w-full md:max-w-full` : tw`md:w-5/12`}
+`;
+
+const SectionHeaderStyled = styled(SectionHeader)`
+  ${tw`w-4/5`}
+`
+
+const SubSectionLayout = styled.div`
+  ${tw`flex flex-wrap flex-1 md:flex-no-wrap space-y-3 md:justify-around md:max-w-screen-lg`}
+
+  ${({ reverse }) => {
+    if (reverse) {
+      return css`
+        ${tw`md:flex-row-reverse md:space-x-0 `}
+        ${TextAndButtonContainer} {
+          ${tw`md:mr-8`}
+        }
+      `;
+    } else {
+      return css`
+        ${tw`md:space-x-8`}
+      `;
+    }
+  }}
+
+  ${({ layoutStyle }) => {
+    if (layoutStyle === "column") {
+      return css`
+        ${tw`flex-col w-full max-w-full`}
+        ${TitleAndImageContainer} {
+          ${tw`md:w-full md:max-w-full`}
+        }
+        ${TextAndButtonContainer} {
+          ${tw`md:w-full md:max-w-full`}
+        }
+      `;
+    } else {
+      return css`
+        ${TitleAndImageContainer} {
+          ${tw`md:w-5/12`}
+        }
+        ${TextAndButtonContainer} {
+          ${tw`md:w-5/12`}
+        }
+      `;
+    }
+  }}
 `;
 
 const TextContainer = styled.div`
@@ -60,12 +95,12 @@ const LatestWorkSubsection = ({
   return (
     <SubSectionContainer className={`bg-${backgroundColor}`}>
       <SubSectionLayout reverse={reverse} layoutStyle={layoutStyle}>
-        <TitleAndImageContainer layoutStyle={layoutStyle}>
-          <SectionHeader label={headerLabel} />
+        <TitleAndImageContainer>
+          <SectionHeaderStyled label={headerLabel} />
           <ImageHolder imgUrl={imgUrl} alt={alt} objectFit={objectFit} />
         </TitleAndImageContainer>
 
-        <TextAndButtonContainer layoutStyle={layoutStyle}>
+        <TextAndButtonContainer>
           <TextContainer backgroundColor={backgroundColor}>
             {children}
           </TextContainer>

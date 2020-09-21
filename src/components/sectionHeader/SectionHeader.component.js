@@ -4,12 +4,12 @@ import tw, { styled } from "twin.macro";
 
 const SectionHeaderContainer = styled.div`
   transform: skewX(-20deg);
-  ${tw`bg-lightblue py-3 md:py-5 px-2 w-full`}
+  ${tw`w-full px-2 py-3 m-auto bg-lightblue md:py-5 md:w-11/12`}
 `;
 
 const LabelContainer = styled.div`
   transform: skewX(20deg);
-  ${tw`text-lightgrey font-bold text-2xl md:text-4xl md:leading-8 text-center`}
+  ${tw`text-2xl font-bold text-center text-lightgrey md:text-4xl md:leading-8`}
 `;
 
 const SectionHeader = ({ label }) => {

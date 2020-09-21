@@ -3,6 +3,8 @@ import tw, { styled } from "twin.macro";
 
 import { ReactComponent as ArrowUp } from "../../images/arrowup.svg";
 
+import { useShowVisibleWhenPassYOffset } from "../../utils/hooks";
+
 const GoTopContainer = styled.div`
   ${tw`fixed z-50 block w-10 h-10 p-1 border-2 border-solid rounded-full cursor-pointer bg-nearblack`}
   bottom: 1rem;
@@ -14,14 +16,7 @@ const ArrowStyle = styled(ArrowUp)`
 `;
 
 const GoTop = () => {
-  // const [isVisible, setVisible] = useState('visible')
-  // useEffect(() => {
-  //   if(window.pageYOffset > 600){
-  //     setVisible('visible')
-  //   } else {
-  //     setVisible('invisible');
-  //   }
-  // })
+  const checkVisible = useShowVisibleWhenPassYOffset(600);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -31,7 +26,7 @@ const GoTop = () => {
   };
 
   return (
-    <GoTopContainer onClick={scrollToTop}>
+    <GoTopContainer onClick={scrollToTop} className={`${checkVisible}`}>
       <ArrowStyle viewBox="0 0 1792 1792" />
     </GoTopContainer>
   );

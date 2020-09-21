@@ -33,7 +33,11 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-wincmd =
+exe '1resize ' . ((&lines * 24 + 26) / 52)
+exe 'vert 1resize ' . ((&columns * 105 + 105) / 211)
+exe '2resize ' . ((&lines * 23 + 26) / 52)
+exe 'vert 2resize ' . ((&columns * 105 + 105) / 211)
+exe 'vert 3resize ' . ((&columns * 105 + 105) / 211)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -87,7 +91,11 @@ normal! zt
 27
 normal! 020|
 wincmd w
-wincmd =
+exe '1resize ' . ((&lines * 24 + 26) / 52)
+exe 'vert 1resize ' . ((&columns * 105 + 105) / 211)
+exe '2resize ' . ((&lines * 23 + 26) / 52)
+exe 'vert 2resize ' . ((&columns * 105 + 105) / 211)
+exe 'vert 3resize ' . ((&columns * 105 + 105) / 211)
 tabnext
 edit src/components/otherWorks/OtherWorks.component.js
 set splitbelow splitright
@@ -115,14 +123,11 @@ normal! zt
 63
 normal! 014|
 tabnext
-edit src/templates/layout/Layout.component.js
+edit src/components/sectionHeader/SectionHeader.component.js
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
-wincmd _ | wincmd |
-vsplit
-2wincmd h
-wincmd w
+1wincmd h
 wincmd w
 set nosplitbelow
 set nosplitright
@@ -142,15 +147,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 18 - ((17 * winheight(0) + 24) / 48)
+let s:l = 7 - ((6 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-18
-normal! 015|
+7
+normal! 055|
 wincmd w
 argglobal
-if bufexists("src/pages/index.js") | buffer src/pages/index.js | else | edit src/pages/index.js | endif
+if bufexists("src/components/latestWorkSubsection/LatestWorkSubsection.component.js") | buffer src/components/latestWorkSubsection/LatestWorkSubsection.component.js | else | edit src/components/latestWorkSubsection/LatestWorkSubsection.component.js | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -160,41 +165,27 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 11 - ((10 * winheight(0) + 24) / 48)
+let s:l = 7 - ((6 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-11
-normal! 034|
+7
+normal! 016|
 wincmd w
-argglobal
-if bufexists("src/components/goTop/GoTop.component.js") | buffer src/components/goTop/GoTop.component.js | else | edit src/components/goTop/GoTop.component.js | endif
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 22 - ((21 * winheight(0) + 24) / 48)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-22
-normal! 04|
-wincmd w
-3wincmd w
+2wincmd w
 wincmd =
 tabnext 3
 set stal=1
-badd +2 .storybook/webpack.config.js
-badd +8 postcss.config.js
-badd +40 src/components/hero/Hero.component.js
-badd +22 tailwind.config.js
-badd +10 src/templates/latestWork/LatestWork.component.js
 badd +77 gatsby-config.js
+badd +8 postcss.config.js
+badd +74 src/components/otherWorks/OtherWorks.component.js
+badd +20 src/templates/layout/Layout.component.js
+badd +1 .storybook/webpack.config.js
+badd +22 tailwind.config.js
+badd +11 src/pages/index.js
+badd +19 src/components/goTop/GoTop.component.js
+badd +40 src/components/hero/Hero.component.js
+badd +10 src/templates/latestWork/LatestWork.component.js
 badd +25 src/content/latest-works/akariapp.mdx
 badd +19 src/components/latestWorkSubsection/LatestWorkSubsection.component.js
 badd +48 src/components/imageLoader/ImageLoader.js
@@ -223,7 +214,6 @@ badd +34 src/components/header.js
 badd +5 src/utils/global.css
 badd +19 .storybook/preview.js
 badd +1 src/components/buttons/MyResumeButton/MyResumeButton.js
-badd +10 src/pages/index.js
 badd +2 .storybook/preview-head.html
 badd +15 src/components/sectionHeader/SectionHeader.component.js
 badd +14 src/components/sectionHeader/SectionHeader.stories.js
@@ -234,16 +224,14 @@ badd +11 src/components/hero/Hero.stories.js
 badd +1 src/components/header/Header.stories.js
 badd +12 src/pages/menu-panel.js
 badd +1 src/components/layout.js
-badd +8 src/templates/layout/Layout.component.js
 badd +6 src/components/about/About.component.js
 badd +33 src/components/about/About.stories.js
 badd +1 ~/.vim/coc-settings.json
 badd +12 src/pages/akariweb.mdx
 badd +1 src/components/latestWork/LatestWork.component.js
 badd +26 src/content/latest-works/ecommerce.mdx
-badd +74 src/components/otherWorks/OtherWorks.component.js
-badd +18 src/components/goTop/GoTop.component.js
-badd +15 src/components/bottomHamburger/BottomHamburger.component.js
+badd +23 src/components/bottomHamburger/BottomHamburger.component.js
+badd +38 src/utils/hooks.js
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -255,6 +243,7 @@ if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &so = s:so_save | let &siso = s:siso_save
+nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost

@@ -3,6 +3,7 @@ import tw, { styled } from "twin.macro";
 import { Link } from "gatsby";
 
 import { ReactComponent as Hamburger } from "../../images/hamburger.svg";
+import { useShowVisibleWhenPassYOffset } from "../../utils/hooks";
 
 const HamburgerContainer = styled(Link)`
   ${tw`fixed z-50 block w-10 h-10 p-1 border-2 border-solid rounded-full cursor-pointer bg-nearblack`}
@@ -15,8 +16,10 @@ const HamburgerStyle = styled(Hamburger)`
 `;
 
 const BottomHamburger = () => {
+  const checkVisible = useShowVisibleWhenPassYOffset(600);
+
   return (
-    <HamburgerContainer to="/menu">
+    <HamburgerContainer to="/menu" className={`${checkVisible}`}>
       <HamburgerStyle viewBox="0 0 32 32" />
     </HamburgerContainer>
   );
