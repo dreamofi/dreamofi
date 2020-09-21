@@ -27,7 +27,7 @@ const ImageLoader = ({ imgUrl, alt, objectFit }) => {
   }
   return (
     <Img
-      style={{ maxHeight: "100%", height: "100%" }}
+      style={{ maxHeight: "100%", height: "100%", minWidth: "100%" }}
       imgStyle={{ objectFit: objectFit }}
       fluid={image.node.fluid}
       alt={alt}

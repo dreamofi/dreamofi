@@ -17,6 +17,7 @@ tabnew
 tabnew
 tabnew
 tabnew
+tabnew
 tabrewind
 edit gatsby-config.js
 set splitbelow splitright
@@ -35,11 +36,11 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 24 + 26) / 52)
-exe 'vert 1resize ' . ((&columns * 105 + 105) / 211)
-exe '2resize ' . ((&lines * 23 + 26) / 52)
-exe 'vert 2resize ' . ((&columns * 105 + 105) / 211)
-exe 'vert 3resize ' . ((&columns * 105 + 105) / 211)
+exe '1resize ' . ((&lines * 24 + 18) / 36)
+exe 'vert 1resize ' . ((&columns * 105 + 74) / 149)
+exe '2resize ' . ((&lines * 23 + 18) / 36)
+exe 'vert 2resize ' . ((&columns * 105 + 74) / 149)
+exe 'vert 3resize ' . ((&columns * 105 + 74) / 149)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -93,11 +94,11 @@ normal! zt
 27
 normal! 020|
 wincmd w
-exe '1resize ' . ((&lines * 24 + 26) / 52)
-exe 'vert 1resize ' . ((&columns * 105 + 105) / 211)
-exe '2resize ' . ((&lines * 23 + 26) / 52)
-exe 'vert 2resize ' . ((&columns * 105 + 105) / 211)
-exe 'vert 3resize ' . ((&columns * 105 + 105) / 211)
+exe '1resize ' . ((&lines * 24 + 18) / 36)
+exe 'vert 1resize ' . ((&columns * 105 + 74) / 149)
+exe '2resize ' . ((&lines * 23 + 18) / 36)
+exe 'vert 2resize ' . ((&columns * 105 + 74) / 149)
+exe 'vert 3resize ' . ((&columns * 105 + 74) / 149)
 tabnext
 edit src/templates/latestWork/LatestWork.component.js
 set splitbelow splitright
@@ -123,11 +124,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 31 - ((30 * winheight(0) + 24) / 48)
+let s:l = 1 - ((0 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-31
+1
 normal! 016|
 wincmd w
 argglobal
@@ -141,7 +142,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 63 - ((34 * winheight(0) + 24) / 48)
+let s:l = 63 - ((22 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -174,7 +175,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 6 - ((5 * winheight(0) + 24) / 48)
+let s:l = 6 - ((5 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -192,13 +193,14 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 16 - ((6 * winheight(0) + 24) / 48)
+let s:l = 16 - ((3 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 16
-normal! 090|
+normal! 091|
 wincmd w
+2wincmd w
 wincmd =
 tabnext
 edit src/components/navbar/Navbar.component.js
@@ -220,14 +222,14 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 24) / 48)
+let s:l = 40 - ((23 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+40
+normal! 021|
 tabnext
-edit src/components/goBack/GoBack.component.js
+edit src/content/latest-works/akariapp.mdx
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -246,13 +248,64 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 11 - ((10 * winheight(0) + 24) / 48)
+let s:l = 23 - ((22 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+23
+normal! 016|
+tabnext
+edit src/components/imageLoader/ImageLoader.js
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+wincmd =
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 30 - ((18 * winheight(0) + 16) / 32)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+30
+normal! 071|
+wincmd w
+argglobal
+if bufexists("src/components/goBack/GoBack.component.js") | buffer src/components/goBack/GoBack.component.js | else | edit src/components/goBack/GoBack.component.js | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 11 - ((0 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 11
 normal! 017|
-tabnext 4
+wincmd w
+wincmd =
+tabnext 3
 set stal=1
 badd +77 gatsby-config.js
 badd +8 postcss.config.js
@@ -310,7 +363,7 @@ badd +1 src/components/latestWork/LatestWork.component.js
 badd +26 src/content/latest-works/ecommerce.mdx
 badd +23 src/components/bottomHamburger/BottomHamburger.component.js
 badd +38 src/utils/hooks.js
-badd +24 src/components/goBack/GoBack.component.js
+badd +11 src/components/goBack/GoBack.component.js
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif

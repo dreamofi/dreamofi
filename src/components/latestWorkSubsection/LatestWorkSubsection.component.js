@@ -29,19 +29,19 @@ const SectionHeaderStyled = styled(SectionHeader)`
 `
 
 const SubSectionLayout = styled.div`
-  ${tw`flex flex-wrap flex-1 md:flex-no-wrap space-y-3 md:justify-around md:max-w-screen-lg`}
+  ${tw`flex flex-wrap items-center flex-1 md:flex-no-wrap space-y-3 md:justify-around max-w-screen-md`}
 
   ${({ reverse }) => {
     if (reverse) {
       return css`
         ${tw`md:flex-row-reverse md:space-x-0 `}
         ${TextAndButtonContainer} {
-          ${tw`md:mr-8`}
+          ${tw`md:mr-16`}
         }
       `;
     } else {
       return css`
-        ${tw`md:space-x-8`}
+        ${tw`md:space-x-16`}
       `;
     }
   }}
@@ -49,12 +49,12 @@ const SubSectionLayout = styled.div`
   ${({ layoutStyle }) => {
     if (layoutStyle === "column") {
       return css`
-        ${tw`flex-col w-full max-w-full`}
+        ${tw`flex-col w-full md:w-3/5`}
         ${TitleAndImageContainer} {
-          ${tw`md:w-full md:max-w-full`}
+          ${tw`mb-4 md:w-full md:max-w-full`}
         }
         ${TextAndButtonContainer} {
-          ${tw`md:w-full md:max-w-full`}
+          ${tw`m-0 md:w-full md:max-w-full`}
         }
       `;
     } else {
