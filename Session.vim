@@ -15,6 +15,8 @@ $argadd postcss.config.js
 set stal=2
 tabnew
 tabnew
+tabnew
+tabnew
 tabrewind
 edit gatsby-config.js
 set splitbelow splitright
@@ -97,8 +99,12 @@ exe '2resize ' . ((&lines * 23 + 26) / 52)
 exe 'vert 2resize ' . ((&columns * 105 + 105) / 211)
 exe 'vert 3resize ' . ((&columns * 105 + 105) / 211)
 tabnext
-edit src/components/otherWorks/OtherWorks.component.js
+edit src/templates/latestWork/LatestWork.component.js
 set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
@@ -106,7 +112,26 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
+wincmd =
 argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 31 - ((30 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+31
+normal! 016|
+wincmd w
+argglobal
+if bufexists("src/components/otherWorks/OtherWorks.component.js") | buffer src/components/otherWorks/OtherWorks.component.js | else | edit src/components/otherWorks/OtherWorks.component.js | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -122,6 +147,8 @@ exe s:l
 normal! zt
 63
 normal! 014|
+wincmd w
+wincmd =
 tabnext
 edit src/components/sectionHeader/SectionHeader.component.js
 set splitbelow splitright
@@ -147,12 +174,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 7 - ((6 * winheight(0) + 24) / 48)
+let s:l = 6 - ((5 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-7
-normal! 055|
+6
+normal! 027|
 wincmd w
 argglobal
 if bufexists("src/components/latestWorkSubsection/LatestWorkSubsection.component.js") | buffer src/components/latestWorkSubsection/LatestWorkSubsection.component.js | else | edit src/components/latestWorkSubsection/LatestWorkSubsection.component.js | endif
@@ -165,25 +192,76 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 7 - ((6 * winheight(0) + 24) / 48)
+let s:l = 16 - ((6 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-7
-normal! 016|
+16
+normal! 090|
 wincmd w
-2wincmd w
 wincmd =
-tabnext 3
+tabnext
+edit src/components/navbar/Navbar.component.js
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+tabnext
+edit src/components/goBack/GoBack.component.js
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 11 - ((10 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+11
+normal! 017|
+tabnext 4
 set stal=1
 badd +77 gatsby-config.js
 badd +8 postcss.config.js
-badd +74 src/components/otherWorks/OtherWorks.component.js
+badd +63 src/components/otherWorks/OtherWorks.component.js
 badd +20 src/templates/layout/Layout.component.js
 badd +1 .storybook/webpack.config.js
 badd +22 tailwind.config.js
 badd +11 src/pages/index.js
-badd +19 src/components/goTop/GoTop.component.js
+badd +1 src/components/goTop/GoTop.component.js
 badd +40 src/components/hero/Hero.component.js
 badd +10 src/templates/latestWork/LatestWork.component.js
 badd +25 src/content/latest-works/akariapp.mdx
@@ -196,7 +274,7 @@ badd +41 src/components/header/Header.component.js
 badd +9 src/components/footer/Footer.stories.js
 badd +6 src/components/navbar/Navbar.stories.js
 badd +9 src/components/menuPanel/MenuPanel.stories.js
-badd +24 src/components/menuPanel/MenuPanel.component.js
+badd +3 src/components/menuPanel/MenuPanel.component.js
 badd +6 src/components/footer/Footer.component.js
 badd +42 src/components/navbar/Navbar.component.js
 badd +2 src/components/buttons/Button.stories.js
@@ -232,6 +310,7 @@ badd +1 src/components/latestWork/LatestWork.component.js
 badd +26 src/content/latest-works/ecommerce.mdx
 badd +23 src/components/bottomHamburger/BottomHamburger.component.js
 badd +38 src/utils/hooks.js
+badd +24 src/components/goBack/GoBack.component.js
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif

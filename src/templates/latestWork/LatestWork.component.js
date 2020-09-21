@@ -4,6 +4,7 @@ import tw, { styled } from "twin.macro";
 
 import Layout from "../layout/Layout.component";
 import LatestWorkSubsection from "../../components/latestWorkSubsection/LatestWorkSubsection.component";
+import GoBack from "../../components/goBack/GoBack.component";
 
 const LatestWorkContainer = styled.div`
   ${tw`flex items-center justify-center w-full md:py-16 bg-lightgrey`}
@@ -27,6 +28,7 @@ const LatestWorkLayout = ({ children, imgUrl, alt, headerLabel, linkTo }) => {
           {children}
         </LatestWorkSubsection>
       </LatestWorkContainer>
+      <GoBack />
     </Layout>
   );
 };

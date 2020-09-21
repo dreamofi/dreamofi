@@ -30,16 +30,24 @@ const Navbar = ({ isAlone }) => {
   return (
     <NavbarContainer isAlone={isAlone}>
       <NavbarButton>
-        <AnchorLink to="/#Home">HOME</AnchorLink>
+        <AnchorLink to="/#Home" stripHash>
+          HOME
+        </AnchorLink>
       </NavbarButton>
       <NavbarButton>
-        <AnchorLink to="/#About">ABOUT</AnchorLink>
+        <AnchorLink to="/#About" stripHash>
+          ABOUT
+        </AnchorLink>
       </NavbarButton>
       <NavbarButton>
-        <AnchorLink to="/#Works">WORKS</AnchorLink>
+        <AnchorLink to="/#Works" stripHash>
+          WORKS
+        </AnchorLink>
       </NavbarButton>
       <NavbarButton>
-        <AnchorLink to="/#Contact">CONTACT</AnchorLink>
+        <AnchorLink to="/#Contact" stripHash>
+          CONTACT
+        </AnchorLink>
       </NavbarButton>
     </NavbarContainer>
   );
