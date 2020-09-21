@@ -29,7 +29,7 @@ const SectionHeaderStyled = styled(SectionHeader)`
 `
 
 const SubSectionLayout = styled.div`
-  ${tw`flex flex-wrap items-center flex-1 md:flex-no-wrap space-y-3 md:justify-around max-w-screen-md`}
+  ${tw`flex flex-wrap items-center flex-1 md:flex-no-wrap space-y-3 md:justify-around max-w-screen-lg`}
 
   ${({ reverse }) => {
     if (reverse) {
@@ -49,7 +49,7 @@ const SubSectionLayout = styled.div`
   ${({ layoutStyle }) => {
     if (layoutStyle === "column") {
       return css`
-        ${tw`flex-col w-full md:w-3/5`}
+        ${tw`flex-col w-full md:w-3/5 md:max-w-screen-md`}
         ${TitleAndImageContainer} {
           ${tw`mb-4 md:w-full md:max-w-full`}
         }

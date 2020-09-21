@@ -3,11 +3,11 @@ import tw, { styled } from "twin.macro";
 import Navbar from "../navbar/Navbar.component";
 
 const FooterContainer = styled.div`
-  ${tw`flex flex-col items-center bg-nearblack font-display text-lightgrey text-center space-y-2 py-2`}
+  ${tw`flex flex-col items-center pt-2 pb-16 text-center bg-nearblack font-display text-lightgrey space-y-2`}
 `;
 
 const RightsResverveText = styled.div`
-  ${tw`text-center`}
+  ${tw`mb-16 text-center`}
 `
 
 const Footer = () => {

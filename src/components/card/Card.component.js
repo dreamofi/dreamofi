@@ -18,7 +18,7 @@ const CardImage = styled(ImageLoader)`
 `;
 
 const CardContentContainer = styled.div`
-  ${tw`flex flex-col flex-auto p-2 bg-golden md:p-4`}
+  ${tw`flex flex-col flex-auto px-2 py-4 md:px-4 bg-golden`}
 `;
 
 const CardTitle = styled.div`

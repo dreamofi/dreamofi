@@ -5,9 +5,7 @@ import tw, { styled } from "twin.macro";
 
 import SectionHeader from "../sectionHeader/SectionHeader.component";
 import Button from "../buttons/Button.component";
-
-import portraitImage from "../../images/portrait.jpg";
-
+import ImageLoader from "../imageLoader/ImageLoader";
 import SectionDivider from "../sectionDivider/SectionDivider.component";
 
 const SectionContainer = styled.section`
@@ -27,7 +25,7 @@ const TitleAndImageContainer = styled.div`
   ${tw`flex flex-col items-center w-full md:w-5/12 space-y-3 sm:space-y-5 md:justify-around `}
 `;
 
-const ImageHolder = styled.img`
+const ImageHolder = styled(ImageLoader)`
   ${tw`object-contain w-1/3 mx-auto ml-auto md:w-full md:max-h-full lg:h-64 md:h-full md:object-cover lg:object-contain`};
 `;
 
@@ -41,7 +39,7 @@ const TextContainer = styled.div`
     backgroundColor === "nearblack" && tw`text-lightgrey`}
 `;
 
-const About = ({ backgroundColor, imgUrl, text, reverse, id }) => {
+const About = ({ backgroundColor, reverse, id }) => {
   return (
     <SectionContainer id={id}>
       <SubSectionContainer className={`bg-${backgroundColor}`}>
@@ -53,12 +51,32 @@ const About = ({ backgroundColor, imgUrl, text, reverse, id }) => {
         <SubSectionLayout reverse={reverse}>
           <TitleAndImageContainer>
             <SectionHeader label="About me" />
-            <ImageHolder src={imgUrl} />
+            <ImageHolder imgUrl="portrait.jpg" />
           </TitleAndImageContainer>
 
           <TextAndButtonContainer>
             <TextContainer backgroundColor={backgroundColor}>
-              {text}
+              <p>
+                {`
+                My name is Duong Xuan Truong and I have a Bachelor's Degree in
+                English Language and with a second major in Finance and Banking.
+                After working in roles centered around doing English-Vietnamese
+                interpretation and translation and project management assistance
+                for five years, I realized that working with and understanding
+                computers really does give me joy. So, I decided to redirect my
+                focuses.`}
+              </p>
+              <p>
+                {`I first started my re-education with the Python programming
+                language. Immediately, I fell in love with its simplistic and
+                readable syntax. I continued to learn and tinker with the
+                language for several months. Then, I stumbled upon the
+                fascinating world of Web Development after discovering
+                Freecodecamp site. From that point on, I have spent countless
+                hours working with HTML, CSS, Javascript, and the React library,
+                in hopes that I can someday put my technical know-how to good
+                use.`}
+              </p>
             </TextContainer>
             <Button label="MY RESUME" />
           </TextAndButtonContainer>
@@ -80,7 +98,5 @@ About.propTypes = {
 
 About.defaultProps = {
   backgroundColor: "lightgrey",
-  imgUrl: portraitImage,
-  text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum`,
   reverse: false,
 };

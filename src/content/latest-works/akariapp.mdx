@@ -2,30 +2,42 @@
 title: Web app for Akari Center
 path: /latest-works/akariapp
 date: 2020-09-20
-description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+description: This is a web app developed for Akari Skills Training Center For Children With Special Needs. It is called CWD Examination Toolkit (or CET), with the main purpose of examining the growth of children under 7 years old to detect areas with slowness/difficulty based on PEP-3 (the Psychoeducational Profile, Third Edition). The app allows CRUD operations and export of report in PDF/CSV, and is built with React, PouchDB and Material UI.
 img: 3-devices-white.png
+imgAlt: Image for Akari App
 url: https://cwd-exam.now.sh
 ---
-
 import LatestWorkLayout from "../../templates/latestWork/LatestWork.component.js";
 
-<h1 class="font-bold">Et iaculatur lapis</h1>
+export default LatestWorkLayout;
+
+<h1>A web app for managing Children with disability (CWD)</h1>
 <p>{props.pageContext.frontmatter.description}</p>
 
-- Testing first list
-  - The first line
-  - The second line
-  - Add more yeahhhhhhhh
+<h2>Main features of the app:</h2>
 
-1. Testing second list
-1. The first line
-1. The second line
-1. Add more yeahhhhhhhh
+<ul>
+  <li>CRUD operations</li>
+  <li>Save/Load data files from local disk</li>
+  <li>Export PDF/CSV</li>
+  <li>Can work offline</li>
+  <li>Responsive design</li>
+  <li>Hosted on Vercel</li>
+</ul>
 
-export default function Layout({ children, ...props }) {
-  return (
-    <LatestWorkLayout imgUrl={props.pageContext.frontmatter.img} alt="Akari app image" headerLabel={props.pageContext.frontmatter.title} linkTo={props.pageContext.frontmatter.url}>
-      {children}
-    </LatestWorkLayout>
-  )
-}
+<h2>Main incorporated libraries:</h2>
+
+<ul>
+  <li>React</li>
+  <li>Material UI</li>
+  <li>React-hook-form</li>
+  <li>Streamsaver</li>
+  <li>Memorystream</li>
+  <li>Papaparse</li>
+  <li>PDFMake</li>
+  <li>PouchDB</li>
+  <li>Little-state-machine</li>
+</ul>
+
+A manual (in Vietnamese) and sample data file for demo can be downloaded <a href="https://drive.google.com/drive/folders/1KsKLkqAZF0TaPvU7RoDSph7MZTotc7R1?usp=sharing)" target="_blank"><strong>here</strong></a>
+
