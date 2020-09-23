@@ -3,4 +3,4 @@ This page is built with Gatsby, Storybook, TailwindCSS and Emotion Styled Compon
 
 After cloning, you can build this page with `yarn start`
 
-A demo of this page can be viewed [here](https://ecommerce-dreamofi.vercel.app/)
+A demo of this page can be viewed [here](https://dreamofi.vercel.app/)
