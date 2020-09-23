@@ -19,7 +19,7 @@ const Ribbon = styled.div`
 
 const LabelContainer = styled.div`
   transform: skewX(20deg);
-  ${tw`text-4xl font-bold text-center md:text-5xl`}
+  ${tw`text-3xl font-bold text-center sm:text-4xl md:text-5xl`}
 `;
 
 const WorkSectionHeader = ({ label }) => {

@@ -47,12 +47,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 2 - ((1 * winheight(0) + 12) / 24)
+let s:l = 49 - ((23 * winheight(0) + 12) / 24)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-2
-normal! 036|
+49
+normal! 010|
 wincmd w
 argglobal
 if bufexists(".storybook/webpack.config.js") | buffer .storybook/webpack.config.js | else | edit .storybook/webpack.config.js | endif
@@ -83,12 +83,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 6 - ((5 * winheight(0) + 24) / 48)
+let s:l = 5 - ((4 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-6
-normal! 014|
+5
+normal! 013|
 wincmd w
 wincmd =
 tabnext
@@ -111,12 +111,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 13 - ((12 * winheight(0) + 24) / 48)
+let s:l = 1 - ((0 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-13
-normal! 0
+1
+normal! 013|
 tabnext
 edit src/components/workSectionHeader/WorkSectionHeader.component.js
 set splitbelow splitright
@@ -137,11 +137,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 39 - ((29 * winheight(0) + 24) / 48)
+let s:l = 3 - ((0 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-39
+3
 normal! 02|
 tabnext
 edit src/pages/index.js
@@ -170,8 +170,12 @@ normal! zt
 20
 normal! 09|
 tabnext
-edit src/components/latestWork/LatestWork.component.js
+edit src/components/otherWorks/OtherWorks.component.js
 set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
@@ -179,6 +183,7 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
+wincmd =
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -189,12 +194,32 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 43 - ((29 * winheight(0) + 24) / 48)
+let s:l = 60 - ((31 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-43
-normal! 020|
+60
+normal! 043|
+wincmd w
+argglobal
+if bufexists("src/components/latestWork/LatestWork.component.js") | buffer src/components/latestWork/LatestWork.component.js | else | edit src/components/latestWork/LatestWork.component.js | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 61 - ((47 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+61
+normal! 026|
+wincmd w
+wincmd =
 tabnext
 edit src/templates/layout/Layout.component.js
 set splitbelow splitright
@@ -221,7 +246,7 @@ exe s:l
 normal! zt
 16
 normal! 09|
-tabnext 2
+tabnext 3
 set stal=1
 badd +77 gatsby-config.js
 badd +8 postcss.config.js
@@ -229,7 +254,7 @@ badd +5 src/components/buttons/Button.component.js
 badd +52 src/components/latestWorkSubsection/LatestWorkSubsection.component.js
 badd +26 src/content/latest-works/ecommerce.mdx
 badd +43 src/components/menuPanel/MenuPanel.component.js
-badd +1 src/components/latestWork/LatestWork.component.js
+badd +61 src/components/latestWork/LatestWork.component.js
 badd +11 src/components/bottomHamburger/BottomHamburger.component.js
 badd +22 src/components/card/Card.component.js
 badd +30 src/components/imageLoader/ImageLoader.js

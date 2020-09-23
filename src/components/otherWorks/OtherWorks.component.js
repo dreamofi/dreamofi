@@ -57,7 +57,7 @@ const OtherWorks = () => {
 
   return (
     <OtherWorksContainer>
-      <WorkSectionHeader label="OTHER WORKS" />
+      <WorkSectionHeader label="Other works" />
       <CardsContainer>
         {data.map((card, index) => (
           <Card
