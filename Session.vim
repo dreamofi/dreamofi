@@ -14,6 +14,10 @@ argglobal
 $argadd postcss.config.js
 set stal=2
 tabnew
+tabnew
+tabnew
+tabnew
+tabnew
 tabrewind
 edit gatsby-config.js
 set splitbelow splitright
@@ -61,7 +65,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 2 - ((0 * winheight(0) + 12) / 24)
+let s:l = 2 - ((0 * winheight(0) + 11) / 23)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -79,16 +83,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 33 - ((32 * winheight(0) + 24) / 49)
+let s:l = 6 - ((5 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-33
-normal! 043|
+6
+normal! 014|
 wincmd w
 wincmd =
 tabnext
-edit README.md
+edit src/components/sectionDivider/SectionDivider.component.js
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -107,12 +111,116 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 24) / 48)
+let s:l = 13 - ((12 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+13
 normal! 0
+tabnext
+edit src/components/workSectionHeader/WorkSectionHeader.component.js
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 39 - ((29 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+39
+normal! 02|
+tabnext
+edit src/pages/index.js
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 20 - ((19 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+20
+normal! 09|
+tabnext
+edit src/components/latestWork/LatestWork.component.js
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 43 - ((29 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+43
+normal! 020|
+tabnext
+edit src/templates/layout/Layout.component.js
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 16 - ((15 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+16
+normal! 09|
 tabnext 2
 set stal=1
 badd +77 gatsby-config.js
@@ -121,7 +229,7 @@ badd +5 src/components/buttons/Button.component.js
 badd +52 src/components/latestWorkSubsection/LatestWorkSubsection.component.js
 badd +26 src/content/latest-works/ecommerce.mdx
 badd +43 src/components/menuPanel/MenuPanel.component.js
-badd +61 src/components/latestWork/LatestWork.component.js
+badd +1 src/components/latestWork/LatestWork.component.js
 badd +11 src/components/bottomHamburger/BottomHamburger.component.js
 badd +22 src/components/card/Card.component.js
 badd +30 src/components/imageLoader/ImageLoader.js
@@ -172,7 +280,7 @@ badd +12 src/pages/akariweb.mdx
 badd +38 src/utils/hooks.js
 badd +9 src/pages/404.js
 badd +0 src/components/seo.js
-badd +0 README.md
+badd +6 README.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -184,7 +292,6 @@ if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &so = s:so_save | let &siso = s:siso_save
-nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost

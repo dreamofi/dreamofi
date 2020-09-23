@@ -9,6 +9,17 @@ const DividerContainer = styled.svg`
     isTop ? tw`absolute inset-x-0 top-0` : tw`absolute inset-x-0 bottom-0`}
 `;
 
+const listColor = {
+  lightgrey: "#F4F4F4",
+  darkgrey: "#C4C4C4",
+  grey: "#C4C4C4",
+  golden: "#FFCE64",
+  pink: "#FD6881",
+  lightblue: "#6498FE",
+  darkblue: "#4F77CC",
+  nearblack: "#3E3D54",
+};
+
 const SectionDivider = ({ topColor, bottomColor, isTop, isFooter }) => {
   return (
     <DividerContainer
@@ -20,22 +31,22 @@ const SectionDivider = ({ topColor, bottomColor, isTop, isFooter }) => {
       {!isFooter ? (
         <>
           <polygon
-            className={`fill-current text-${topColor} `}
+            style={{fill: listColor[topColor]}}
             points="0,-2 0,100 1900,0 1900,-2"
           />
           <polygon
-            className={`fill-current text-${bottomColor} `}
+            style={{fill: listColor[bottomColor]}}
             points="0,100 0,102 1900,102 1920,0"
           />
         </>
       ) : (
         <>
           <polygon
-            className={`fill-current text-${topColor} `}
+            style={{fill: listColor[topColor]}}
             points="0,0 0,82 960,22 1920,82 1920,0"
           />
           <polygon
-            className={`fill-current text-${bottomColor} `}
+            style={{fill: listColor[bottomColor]}}
             points="0,102 1900,102 950,30"
           />
         </>

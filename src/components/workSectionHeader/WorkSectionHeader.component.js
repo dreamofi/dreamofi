@@ -29,7 +29,7 @@ const WorkSectionHeader = ({ label }) => {
         isTop={true}
         isFooter={false}
         topColor="lightgrey"
-        bottomColor="darkgrey"
+        bottomColor="grey"
       />
       <RibbonContainer>
         <Ribbon>
@@ -39,7 +39,7 @@ const WorkSectionHeader = ({ label }) => {
       <SectionDivider
         isTop={false}
         isFooter={false}
-        topColor="darkgrey"
+        topColor="grey"
         bottomColor="lightgrey"
       />
     </SectionDividerContainer>
