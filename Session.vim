@@ -14,10 +14,6 @@ argglobal
 $argadd postcss.config.js
 set stal=2
 tabnew
-tabnew
-tabnew
-tabnew
-tabnew
 tabrewind
 edit gatsby-config.js
 set splitbelow splitright
@@ -92,7 +88,7 @@ normal! 013|
 wincmd w
 wincmd =
 tabnext
-edit src/components/sectionDivider/SectionDivider.component.js
+edit README.md
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -116,137 +112,8 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
-normal! 013|
-tabnext
-edit src/components/workSectionHeader/WorkSectionHeader.component.js
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 3 - ((0 * winheight(0) + 24) / 48)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-3
-normal! 02|
-tabnext
-edit src/pages/index.js
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 20 - ((19 * winheight(0) + 24) / 48)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-20
-normal! 09|
-tabnext
-edit src/components/otherWorks/OtherWorks.component.js
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-wincmd =
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 60 - ((31 * winheight(0) + 24) / 48)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-60
-normal! 043|
-wincmd w
-argglobal
-if bufexists("src/components/latestWork/LatestWork.component.js") | buffer src/components/latestWork/LatestWork.component.js | else | edit src/components/latestWork/LatestWork.component.js | endif
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 61 - ((47 * winheight(0) + 24) / 48)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-61
-normal! 026|
-wincmd w
-wincmd =
-tabnext
-edit src/templates/layout/Layout.component.js
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 16 - ((15 * winheight(0) + 24) / 48)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-16
-normal! 09|
-tabnext 3
+normal! 0
+tabnext 2
 set stal=1
 badd +77 gatsby-config.js
 badd +8 postcss.config.js
@@ -269,9 +136,9 @@ badd +22 src/components/header/Header.component.js
 badd +11 src/components/goBack/GoBack.component.js
 badd +6 src/components/sectionHeader/SectionHeader.component.js
 badd +1 src/components/navbar/Navbar.component.js
-badd +19 src/components/otherWorks/OtherWorks.component.js
-badd +20 src/templates/layout/Layout.component.js
-badd +1 src/pages/index.js
+badd +60 src/components/otherWorks/OtherWorks.component.js
+badd +16 src/templates/layout/Layout.component.js
+badd +20 src/pages/index.js
 badd +1 src/components/goTop/GoTop.component.js
 badd +40 src/components/hero/Hero.component.js
 badd +10 src/pages/menu.js
@@ -283,8 +150,8 @@ badd +11 src/components/contact/Contact.stories.js
 badd +28 src/components/contact/Contact.component.js
 badd +6 src/components/sectionDivider/SectionDivider.stories.js
 badd +34 src/components/latestWorkSubsection/LatestWorkSubsection.stories.js
-badd +53 src/components/sectionDivider/SectionDivider.component.js
-badd +12 src/components/workSectionHeader/WorkSectionHeader.component.js
+badd +1 src/components/sectionDivider/SectionDivider.component.js
+badd +22 src/components/workSectionHeader/WorkSectionHeader.component.js
 badd +4 babel-plugin-macros.config.js
 badd +1 gatsby-browser.js
 badd +2 .storybook/main.js
