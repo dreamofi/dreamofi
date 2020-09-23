@@ -23,6 +23,11 @@ const CallPitch = styled.div`
 const EmailContainer = styled(Obfuscate)`
   ${tw`block w-full`}
 `;
+
+const PhoneContainer = styled(Obfuscate)`
+  ${tw`inline-block font-bold no-underline text-lightgrey hover:text-lightblue`}
+`;
+
 const Email = styled.img`
   ${tw`w-full`}
 `;
@@ -31,9 +36,9 @@ const ContactLink = styled.div`
   ${tw`text-sm md:text-base space-x-4`}
 `;
 
-const LinkElement = styled.a`
-  ${tw`inline-block font-bold no-underline text-lightgrey hover:text-lightblue`}
-`;
+// const LinkElement = styled.a`
+//   ${tw`inline-block font-bold no-underline text-lightgrey hover:text-lightblue`}
+// `;
 
 const Contact = ({ id }) => {
   return (
@@ -50,8 +55,9 @@ const Contact = ({ id }) => {
         </EmailContainer>
 
         <ContactLink>
-          <LinkElement href="#">Linkedln</LinkElement>
-          <LinkElement href="#">Vietnamwork</LinkElement>
+          {/* <LinkElement href="#">Linkedln</LinkElement> */}
+          {/* <LinkElement href="#">Vietnamwork</LinkElement> */}
+          <PhoneContainer tel="+0084378406691">Phone</PhoneContainer>
         </ContactLink>
       </ContentContainer>
     </ContactContainer>

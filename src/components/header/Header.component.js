@@ -16,6 +16,10 @@ const NavbarContainer = styled.div`
   ${tw`items-center hidden md:flex space-x-4`}
 `;
 
+const ButtonContainer = styled.a`
+  ${tw`block`}
+`;
+
 const LogoContainer = styled.img`
   ${tw`h-16`}
 `;
@@ -35,7 +39,12 @@ const Header = () => {
         <LogoContainer src={portraitLogo} alt="Logo" />
         <NavbarContainer>
           <Navbar />
-          <Button label="MY RESUME" buttonStyles="RESUME" />
+          <ButtonContainer
+            href="https://drive.google.com/file/d/1vmYwNXkI_UJ44SUWWMndDj23UeVPJSVu/view?usp=sharing"
+            target="_blank"
+          >
+            <Button label="MY RESUME" buttonStyles="RESUME" />
+          </ButtonContainer>
         </NavbarContainer>
         <HamburgerContainer to="/menu/">
           <HamburgerStyle viewBox="0 0 40 32" />

@@ -1,6 +1,6 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import {navigate} from '@reach/router';
+import { navigate } from "@reach/router";
 
 import Navbar from "../navbar/Navbar.component";
 import Button from "../buttons/Button.component";
@@ -16,6 +16,10 @@ const LogoContainer = styled.img`
   ${tw`h-16`}
 `;
 
+const ButtonContainer = styled.a`
+  ${tw`block`}
+`;
+
 const CloseButtonContainer = styled(CloseButton)`
   ${tw`w-12 h-16 cursor-pointer fill-current text-nearblack`}
 `;
@@ -27,7 +31,7 @@ const MenuScreenContainer = styled.div`
 const MenuPanel = () => {
   const handleClose = () => {
     navigate(-1);
-  }
+  };
 
   return (
     <MenuScreenContainer>
@@ -37,7 +41,12 @@ const MenuPanel = () => {
       </HeaderContainer>
 
       <Navbar isAlone={true} />
-      <Button label="MY RESUME" buttonStyles="RESUME" />
+      <ButtonContainer
+        href="https://drive.google.com/file/d/1vmYwNXkI_UJ44SUWWMndDj23UeVPJSVu/view?usp=sharing"
+        target="_blank"
+      >
+        <Button label="MY RESUME" buttonStyles="RESUME" />
+      </ButtonContainer>
     </MenuScreenContainer>
   );
 };

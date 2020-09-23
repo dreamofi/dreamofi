@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import tw, { styled } from "twin.macro";
 
 import SectionHeader from "../sectionHeader/SectionHeader.component";
@@ -31,6 +30,10 @@ const ImageHolder = styled(ImageLoader)`
 
 const TextAndButtonContainer = styled.div`
   ${tw`flex flex-col flex-wrap items-start justify-center w-full md:w-5/12 space-y-4`}
+`;
+
+const ButtonContainer = styled.a`
+  ${tw`block`}
 `;
 
 const TextContainer = styled.div`
@@ -78,7 +81,12 @@ const About = ({ backgroundColor, reverse, id }) => {
                 use.`}
               </p>
             </TextContainer>
-            <Button label="MY RESUME" />
+            <ButtonContainer
+              href="https://drive.google.com/file/d/1vmYwNXkI_UJ44SUWWMndDj23UeVPJSVu/view?usp=sharing"
+              target="_blank"
+            >
+              <Button label="MY RESUME" />
+            </ButtonContainer>
           </TextAndButtonContainer>
         </SubSectionLayout>
       </SubSectionContainer>
