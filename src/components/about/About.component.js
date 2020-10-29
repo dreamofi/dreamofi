@@ -82,7 +82,7 @@ const About = ({ backgroundColor, reverse, id }) => {
               </p>
             </TextContainer>
             <ButtonContainer
-              href="https://drive.google.com/file/d/1vmYwNXkI_UJ44SUWWMndDj23UeVPJSVu/view?usp=sharing"
+              href="https://github.com/dreamofi/portfolioPageResoures/blob/master/Duong-Xuan-Truong_Resume_22_09_2020.pdf"
               target="_blank"
             >
               <Button label="MY RESUME" />
